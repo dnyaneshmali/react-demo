@@ -4,6 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
@@ -14,8 +15,8 @@ const Header = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             className="header-logo"
           >
             REACT<span className="header-logo-accent">DEMO</span>
@@ -25,6 +26,8 @@ const Header = () => {
             {['Home', 'About', 'Services', 'Contact'].map((page) => (
               <Button
                 key={page}
+                component={Link}
+                to={page === 'Home' ? '/' : `/${page.toLowerCase()}`}
                 className="header-nav-button"
               >
                 {page}

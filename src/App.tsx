@@ -2,6 +2,8 @@
 import './App.css'
 import Header from './components/header';
 import Footer from './components/Footer';
+import { Outlet } from 'react-router';
+import { Suspense } from 'react';
 
 function App() {
 
@@ -10,7 +12,9 @@ function App() {
       <Header />
 
       <main className="main-content">
-        <p>This is the main content of the app.</p>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet/>
+        </Suspense>
       </main>
 
       <Footer />
