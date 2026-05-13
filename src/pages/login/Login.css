@@ -16,7 +16,7 @@
     flex: 1.2;
     position: relative;
     background: linear-gradient(135deg, #09090e 0%, #17152b 50%, #0d0b1a 100%);
-    padding: 60px;
+    padding: 30px 40px; /* Reduced from 60px to 30px top/bottom */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,6 +74,7 @@
     position: relative;
     z-index: 2;
     max-width: 480px;
+    margin-top: -20px; /* Shift content up slightly to use space better */
 }
 
 .ai-badge {
@@ -83,19 +84,19 @@
     border: 1px solid rgba(170, 59, 255, 0.3);
     border-radius: 20px;
     color: #d8b4fe;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1.5px;
-    margin-bottom: 24px;
+    margin-bottom: 16px; /* Reduced from 24px */
     text-transform: uppercase;
 }
 
-.login-left h1.agentic-title {
+.login-left h3.agentic-title {
     font-family: 'Inter', system-ui, sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.8rem; /* Reduced from 3.5rem */
     font-weight: 800;
     line-height: 1.1;
-    margin: 0 0 24px 0;
+    margin: 0 0 16px 0; /* Reduced margin */
     background: linear-gradient(to right, #ffffff 0%, #a8b2d1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -103,10 +104,10 @@
 }
 
 .agentic-description {
-    font-size: 1.1rem;
-    line-height: 1.6;
+    font-size: 1rem; /* Reduced from 1.1rem */
+    line-height: 1.5;
     color: #94a3b8;
-    margin-bottom: 48px;
+    margin-bottom: 32px; /* Reduced from 48px */
 }
 
 .feature-list {
@@ -145,7 +146,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    padding: 20px 40px; /* Reduced vertical padding */
     position: relative;
 }
 
@@ -157,33 +158,33 @@
 
 .login-form-container h2 {
     font-family: 'Inter', system-ui, sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduced from 2rem */
     color: #f8fafc;
-    margin: 0 0 8px 0;
+    margin: 0 0 6px 0;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
 
 .form-subtitle {
     color: #64748b;
-    font-size: 0.95rem;
-    margin-bottom: 40px;
+    font-size: 0.9rem; /* Reduced from 0.95rem */
+    margin-bottom: 24px; /* Reduced from 40px */
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px; /* Reduced from 24px */
 }
 
 .input-group {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px; /* Reduced from 8px */
 }
 
 .input-group label {
-    font-size: 0.875rem;
+    font-size: 0.85rem; /* Slightly smaller label */
     color: #cbd5e0;
     font-weight: 500;
 }
@@ -196,12 +197,12 @@
 
 .input-wrapper input {
     width: 100%;
-    padding: 14px 16px;
+    padding: 12px 16px; /* Reduced vertical padding */
     background: #15161c;
     border: 1px solid #2a2b36;
-    border-radius: 12px;
+    border-radius: 10px; /* Adjusted radius */
     color: #f8fafc;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Reduced from 1rem */
     transition: all 0.3s ease;
     box-sizing: border-box;
 }
@@ -214,7 +215,7 @@
     outline: none;
     border-color: #aa3bff;
     background: #1a1924;
-    box-shadow: 0 0 0 4px rgba(170, 59, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(170, 59, 255, 0.15); /* Reduced shadow spread */
 }
 
 .input-wrapper input.error {
@@ -223,7 +224,7 @@
 }
 
 .input-wrapper input.error:focus {
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.15);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
 }
 
 .error-message {
@@ -232,7 +233,7 @@
     left: 4px;
     color: #ef4444;
     font-size: 0.75rem;
-    margin-top: 6px;
+    margin-top: 4px;
     font-weight: 500;
 }
 
@@ -240,7 +241,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: -8px;
+    margin-top: -4px; /* Tightened spacing */
 }
 
 .remember-me {
@@ -335,7 +336,7 @@
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     
-    .login-left h1.agentic-title {
+    .login-left h3.agentic-title {
         font-size: 2.5rem;
     }
     
@@ -353,7 +354,7 @@
         padding: 30px 20px;
     }
     
-    .login-left h1.agentic-title {
+    .login-left h3.agentic-title {
         font-size: 2rem;
     }
 }
