@@ -41,7 +41,7 @@ const Login = () => {
                     <div className="glowing-orb orb-2"></div>
                     <div className="login-left-content">
                         <div className="ai-badge">AGENTIC AI PLATFORM</div>
-                        <h3 className="agentic-title">Next-Gen<br />Autonomous<br />Intelligence</h3>
+                        <h3 className="agentic-title">Next-Gen Autonomous Intelligence</h3>
                         <p className="agentic-description">
                             Access the nexus of advanced multi-agent systems. Orchestrate complex workflows, deploy autonomous agents, and revolutionize your operations with our state-of-the-art cognitive engine.
                         </p>

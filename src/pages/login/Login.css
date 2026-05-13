@@ -92,7 +92,7 @@
 }
 
 .login-left h3.agentic-title {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
     font-size: 2.8rem; /* Reduced from 3.5rem */
     font-weight: 800;
     line-height: 1.1;
@@ -157,7 +157,7 @@
 }
 
 .login-form-container h2 {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
     font-size: 1.8rem; /* Reduced from 2rem */
     color: #f8fafc;
     margin: 0 0 6px 0;
