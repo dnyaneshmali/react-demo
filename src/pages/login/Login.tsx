@@ -1,35 +1,26 @@
-import React, { useState } from 'react';
+import { useForm, type SubmitHandler } from 'react-hook-form';
 import './Login.css';
 
+type Inputs = {
+    username: string;
+    password: string;
+};
+
 const Login = () => {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [errors, setErrors] = useState<{ username?: string, password?: string }>({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const {
+        register,
+        handleSubmit,
+        formState: { errors, isSubmitting },
+    } = useForm<Inputs>();
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        const newErrors: { username?: string, password?: string } = {};
-
-        if (!username.trim()) newErrors.username = 'Username is required';
-        if (!password.trim()) {
-            newErrors.password = 'Password is required';
-        } else if (password.length < 6) {
-            newErrors.password = 'Password must be at least 6 characters';
-        }
-
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors);
-            return;
-        }
-
-        setIsSubmitting(true);
+    const onSubmit: SubmitHandler<Inputs> = (data) => {
         // Simulate an API call
-        setTimeout(() => {
-            setErrors({});
-            setIsSubmitting(false);
-            alert(`Authentication initiated for: ${username}`);
-        }, 1500);
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                alert(`Authentication initiated for: ${data.username}`);
+                resolve(undefined);
+            }, 1500);
+        });
     };
 
     return (
@@ -69,23 +60,19 @@ const Login = () => {
                         <h2>System Authentication</h2>
                         <p className="form-subtitle">Enter your credentials to access the nexus.</p>
 
-                        <form onSubmit={handleSubmit} className="login-form" noValidate>
+                        <form onSubmit={handleSubmit(onSubmit)} className="login-form" noValidate>
                             <div className="input-group">
                                 <label htmlFor="username">Username</label>
                                 <div className="input-wrapper">
                                     <input
                                         type="text"
                                         id="username"
-                                        value={username}
-                                        onChange={(e) => {
-                                            setUsername(e.target.value);
-                                            if (errors.username) setErrors({ ...errors, username: undefined });
-                                        }}
+                                        {...register('username', { required: 'Username is required' })}
                                         className={errors.username ? 'error' : ''}
                                         placeholder="agent_alpha_01"
                                         autoComplete="off"
                                     />
-                                    {errors.username && <span className="error-message">{errors.username}</span>}
+                                    {errors.username && <span className="error-message">{errors.username.message}</span>}
                                 </div>
                             </div>
 
@@ -95,15 +82,17 @@ const Login = () => {
                                     <input
                                         type="password"
                                         id="password"
-                                        value={password}
-                                        onChange={(e) => {
-                                            setPassword(e.target.value);
-                                            if (errors.password) setErrors({ ...errors, password: undefined });
-                                        }}
+                                        {...register('password', {
+                                            required: 'Password is required',
+                                            minLength: {
+                                                value: 6,
+                                                message: 'Password must be at least 6 characters',
+                                            },
+                                        })}
                                         className={errors.password ? 'error' : ''}
                                         placeholder="••••••••"
                                     />
-                                    {errors.password && <span className="error-message">{errors.password}</span>}
+                                    {errors.password && <span className="error-message">{errors.password.message}</span>}
                                 </div>
                             </div>
 
