@@ -23,7 +23,7 @@ const Header = () => {
           </Typography>
 
           <Box className="header-nav">
-            {['Home', 'About', 'Services', 'Contact'].map((page) => (
+            {['Home', 'About', 'Services', 'Contact', 'Login'].map((page) => (
               <Button
                 key={page}
                 component={Link}
