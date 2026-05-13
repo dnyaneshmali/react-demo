@@ -4,11 +4,12 @@
 }
 
 .header-logo {
-  margin-right: 32px !important;
+  margin-right: 24px !important;
   display: flex !important;
   font-family: monospace !important;
   font-weight: 800 !important;
-  letter-spacing: .2rem !important;
+  letter-spacing: .15rem !important;
+  font-size: 1.25rem !important;
   color: inherit !important;
   text-decoration: none !important;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3) !important;
@@ -24,8 +25,10 @@
 }
 
 .header-nav-button {
-  margin-top: 16px !important;
-  margin-bottom: 16px !important;
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+  padding: 4px 12px !important;
+  font-size: 0.85rem !important;
   color: white !important;
   display: block !important;
   font-weight: 600 !important;

@@ -13,12 +13,12 @@ const Footer = () => {
       <Container maxWidth="lg">
         <Box className="footer-content">
           <Typography variant="body1" className="footer-title">
-            React Demo Application
+            Nexus Agentic AI Platform
           </Typography>
           <Typography variant="body2" align="center" className="footer-copyright">
             {'Copyright © '}
             <Link color="inherit" href="#" className="footer-link">
-              React Demo
+              Nexus
             </Link>{' '}
             {new Date().getFullYear()}
             {'. All rights reserved.'}

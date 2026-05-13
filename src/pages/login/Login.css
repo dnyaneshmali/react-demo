@@ -1,21 +1,14 @@
 .login-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    min-height: calc(100vh - 180px); /* Adjusting for header and footer */
+    flex-direction: column;
+    flex: 1; /* Takes full available height from main-content */
 }
 
 .login-container {
     display: flex;
     width: 100%;
-    max-width: 1100px;
-    min-height: 600px;
+    flex: 1;
     background: #0a0a0f;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 60px rgba(170, 59, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Left Side Styles */

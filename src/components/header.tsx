@@ -19,7 +19,7 @@ const Header = () => {
             to="/"
             className="header-logo"
           >
-            REACT<span className="header-logo-accent">DEMO</span>
+            NEX<span className="header-logo-accent">US</span>
           </Typography>
 
           <Box className="header-nav">

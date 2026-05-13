@@ -193,5 +193,6 @@
 /* Push footer to bottom */
 .main-content {
   flex: 1;
-  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
 }
