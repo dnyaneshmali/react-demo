@@ -228,12 +228,10 @@
 }
 
 .error-message {
-    position: absolute;
-    top: 100%;
-    left: 4px;
     color: #ef4444;
     font-size: 0.75rem;
     margin-top: 4px;
+    margin-left: 4px;
     font-weight: 500;
 }
 
