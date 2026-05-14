@@ -8,6 +8,7 @@ const Home = lazy(() => import('./pages/home/Home.tsx'))
 const About = lazy(() => import('./pages/about/About.tsx'))
 const Contact = lazy(() => import('./pages/contact/Contact.tsx'))
 const Login = lazy(() => import('./pages/login/Login.tsx'))
+const Dashboard = lazy(() => import('./pages/dashboard/Dashboard.tsx'))
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
       },
     ],
   },

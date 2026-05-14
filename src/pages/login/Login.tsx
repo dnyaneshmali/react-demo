@@ -1,4 +1,6 @@
 import { useForm, type SubmitHandler } from 'react-hook-form';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 type Inputs = {
@@ -7,20 +9,36 @@ type Inputs = {
 };
 
 const Login = () => {
+    const navigate = useNavigate();
+    const [loginError, setLoginError] = useState('');
+
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
-    } = useForm<Inputs>();
+    } = useForm<Inputs>({
+        mode: 'onChange',
+    });
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
-        // Simulate an API call
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                alert(`Authentication initiated for: ${data.username}`);
-                resolve(undefined);
-            }, 1500);
-        });
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        setLoginError('');
+        try {
+            const response = await fetch('/users.json');
+            const users = await response.json();
+            
+            const matchedUser = users.find(
+                (u: any) => u.username === data.username && u.password === data.password
+            );
+
+            if (matchedUser) {
+                localStorage.setItem('user', JSON.stringify(matchedUser));
+                navigate('/dashboard');
+            } else {
+                setLoginError('Invalid username or password');
+            }
+        } catch (error) {
+            setLoginError('Error during authentication');
+        }
     };
 
     return (
@@ -59,6 +77,8 @@ const Login = () => {
                     <div className="login-form-container">
                         <h2>System Authentication</h2>
                         <p className="form-subtitle">Enter your credentials to access the nexus.</p>
+                        
+                        {loginError && <div className="error-message" style={{ textAlign: 'center', marginBottom: '15px', color: '#ff4d4d', backgroundColor: 'rgba(255, 77, 77, 0.1)', padding: '10px', borderRadius: '4px', border: '1px solid #ff4d4d' }}>{loginError}</div>}
 
                         <form onSubmit={handleSubmit(onSubmit)} className="login-form" noValidate>
                             <div className="input-group">
