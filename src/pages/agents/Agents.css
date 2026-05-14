@@ -1,0 +1,65 @@
+.agents-container {
+  padding: 2rem;
+  min-height: calc(100vh - 120px);
+  background: radial-gradient(circle at 50% 0%, #1a1a2e 0%, #0f0f1a 100%);
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.agents-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  padding-bottom: 1rem;
+}
+
+.agents-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.agents-header p {
+  font-size: 1.1rem;
+  color: #a0a0b0;
+  margin: 0;
+}
+
+.grid-container {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  height: 600px;
+}
+
+/* Override react-data-grid styles for our theme */
+.agentic-grid {
+  height: 100%;
+  border: none !important;
+  --rdg-background-color: transparent !important;
+  --rdg-header-background-color: rgba(0, 240, 255, 0.1) !important;
+  --rdg-row-hover-background-color: rgba(0, 240, 255, 0.05) !important;
+  --rdg-border-color: rgba(255, 255, 255, 0.05) !important;
+  --rdg-color: #e0e0e0 !important;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.95rem;
+}
+
+.agentic-grid .rdg-header-row {
+  color: #00f0ff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+.agentic-grid .rdg-cell {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--rdg-border-color);
+  border-bottom: 1px solid var(--rdg-border-color);
+}

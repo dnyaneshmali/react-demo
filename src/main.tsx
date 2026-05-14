@@ -10,6 +10,7 @@ const About = lazy(() => import('./pages/about/About.tsx'))
 const Contact = lazy(() => import('./pages/contact/Contact.tsx'))
 const Login = lazy(() => import('./pages/login/Login.tsx'))
 const Dashboard = lazy(() => import('./pages/dashboard/Dashboard.tsx'))
+const Agents = lazy(() => import('./pages/agents/Agents.tsx'))
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ const router = createBrowserRouter([
         element: (
           <AuthGuard requiredRole="Admin">
             <Dashboard />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: '/agents',
+        element: (
+          <AuthGuard>
+            <Agents />
           </AuthGuard>
         ),
       },
