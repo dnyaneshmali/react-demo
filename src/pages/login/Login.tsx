@@ -1,6 +1,7 @@
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { authService } from '../../services/auth.service';
 import './Login.css';
 
 type Inputs = {
@@ -31,7 +32,7 @@ const Login = () => {
             );
 
             if (matchedUser) {
-                localStorage.setItem('user', JSON.stringify(matchedUser));
+                authService.login(matchedUser);
                 navigate('/dashboard');
             } else {
                 setLoginError('Invalid username or password');
