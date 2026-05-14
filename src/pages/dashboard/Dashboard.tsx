@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService, type User } from '../../services/auth.service';
-import { SystemActivityChart, AgentResourceChart } from './Charts';
+import { SystemActivityChart, AgentResourceChart } from '../../components/Charts';
 import './Dashboard.css';
 
 const Dashboard = () => {

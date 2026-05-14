@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { lazy } from 'react'
+import AuthGuard from './services/AuthGuard.tsx'
 const Home = lazy(() => import('./pages/home/Home.tsx'))
 const About = lazy(() => import('./pages/about/About.tsx'))
 const Contact = lazy(() => import('./pages/contact/Contact.tsx'))
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
-        element: <Dashboard />,
+        element: (
+          <AuthGuard requiredRole="Admin">
+            <Dashboard />
+          </AuthGuard>
+        ),
       },
     ],
   },
